@@ -1,0 +1,37 @@
+{
+    "name": "folded/orm",
+    "description": "A standalone Eloquent ORM for you web app.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Khalyomede",
+            "email": "khalyomede@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4.0",
+        "illuminate/database": "7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Folded\\": "src",
+            "Test\\": "tests/misc"
+        },
+        "files": [
+            "src/addDatabaseConnection.php",
+            "src/disableEloquentEvents.php",
+            "src/enableEloquentEvents.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.*",
+        "pestphp/pest": "0.3.*",
+        "friendsofphp/php-cs-fixer": "2.*"
+    },
+    "scripts": {
+        "test": "pest --coverage",
+        "lint": "php-cs-fixer --allow-risky=yes fix"
+    }
+}
