@@ -83,6 +83,7 @@ class Model extends EloquentModel
     /**
      * Enables the Eloquent event system for all the models.
      *
+     * @deprecated v0.1.1 Use Model::disableEvents() instead.
      * @since 0.1.0
      * @see https://laravel.com/docs/7.x/eloquent#events For more information about the Eloquent event system.
      *
@@ -90,6 +91,20 @@ class Model extends EloquentModel
      * Model::enableEvent()
      */
     public static function enableEvent(): void
+    {
+        self::$eventsEnabled = true;
+    }
+
+    /**
+     * Enables the Eloquent event system for all the models.
+     *
+     * @since 0.1.1
+     * @see https://laravel.com/docs/7.x/eloquent#events For more information about the Eloquent event system.
+     *
+     * @example
+     * Model::enableEvents()
+     */
+    public static function enableEvents(): void
     {
         self::$eventsEnabled = true;
     }
