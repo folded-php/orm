@@ -2,6 +2,8 @@
 
 A standalone Eloquent ORM for you web app.
 
+[![Build Status](https://travis-ci.com/folded-php/orm.svg?branch=master)](https://travis-ci.com/folded-php/orm) [![Maintainability](https://api.codeclimate.com/v1/badges/9e72165b7dbf2a78b7db/maintainability)](https://codeclimate.com/github/folded-php/orm/maintainability)
+
 ## Summary
 
 - [About](#about)
