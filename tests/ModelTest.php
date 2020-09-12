@@ -32,3 +32,25 @@ it("should return all the posts", function (): void {
         ],
     ]);
 });
+
+it("should paginate the model", function (): void {
+    DatabaseConnections::add([
+        "driver" => "sqlite",
+        "database" => __DIR__ . "/misc/database.sqlite",
+    ]);
+
+    expect(Post::paginate()->toArray())->toBe([
+        'current_page' => 1,
+        'data' => [],
+        'first_page_url' => '/?page=1',
+        'from' => null,
+        'last_page' => 1,
+        'last_page_url' => '/?page=1',
+        'next_page_url' => null,
+        'path' => '/',
+        'per_page' => 15,
+        'prev_page_url' => null,
+        'to' => null,
+        'total' => 0,
+    ]);
+});
