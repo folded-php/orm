@@ -92,6 +92,7 @@ As this library relies on Eloquent, you will find a useful amount of information
 - [1. Get all the data from your model](#1-get-all-the-data-from-your-model)
 - [2. Add more information to the database connection](#2-add-more-information-to-the-database-connection)
 - [3. Enable/disable eloquent events](#3-enable-disable-eloquent-events)
+- [4. Go to a specific page before paginating](#4-go-to-a-specific-page-before-paginating)
 
 ### 1. Get all the data from your model
 
@@ -136,6 +137,28 @@ use function Folded\disableEloquentEvents;
 
 enableEloquentEvents();
 disableEloquentEvents();
+```
+
+### 4. Go to a specific page before paginating
+
+In this example, we will instruct the paginator to go to a certain page before paginating. As we are not in Laravel, this is required to correctly returns the items according to the browsed page.
+
+```php
+$posts = Post::toPage(2)->paginate(15);
+```
+
+The page number should come for example from the query strings, like when the user browse `/post?page=2`.
+
+However, for technical reasons, I could not find how to provide the same method after you call eloquent methods before. Which means that the following code will not work:
+
+```php
+$posts = Post::where("author", "foo")->toPage(2)->paginate(15);
+```
+
+To fix this issue, use the verbose version of `->paginate()`:
+
+```php
+$posts = Post::where("author", "foo")->paginate(15, ["*"], "page", 2); // 2 is the page number
 ```
 
 ## Version support
