@@ -4,10 +4,13 @@ declare(strict_types = 1);
 
 namespace Folded;
 
+use OutOfRangeException;
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Pagination\AbstractPaginator;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Represents a class that reflects a table in the database.
@@ -107,6 +110,33 @@ class Model extends EloquentModel
     public static function enableEvents(): void
     {
         self::$eventsEnabled = true;
+    }
+
+    /**
+     * Instruct the paginate method to go to the desired page.
+     *
+     * Shortcut over the verbose ->paginate(15, ["*"], "page", $pageNumber = 2);
+     *
+     * @param int $pageNumber The page you want to go.
+     *
+     * @throws OutOfRangeException If the page number is below 1.
+     *
+     * @since 0.2.0
+     *
+     * @example
+     * Model::toPage(2)->paginate(15);
+     */
+    public static function toPage(int $pageNumber): Builder
+    {
+        if ($pageNumber < 1) {
+            throw new OutOfRangeException("page number must be greater or equal to 1");
+        }
+
+        AbstractPaginator::currentPageResolver(function () use ($pageNumber) {
+            return $pageNumber;
+        });
+
+        return self::query();
     }
 
     /**

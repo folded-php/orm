@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Calling `Model::paginate()` will no longer raise an error.
 
+### Added
+
+- New Folded exclusive method `Model::toPage(2)` to go to a specific page before calling `->paginate(15)`.
+
 ## [0.1.1] 2020-09-10
 
 ### Fixed

@@ -54,3 +54,28 @@ it("should paginate the model", function (): void {
         'total' => 0,
     ]);
 });
+
+it("should go to the desired page", function (): void {
+    DatabaseConnections::add([
+        "driver" => "sqlite",
+        "database" => __DIR__ . "/misc/database.sqlite",
+    ]);
+
+    $secondPost = [
+        "id" => 2,
+        "excerpt" => "Bar post.",
+        "title" => "Bar",
+    ];
+
+    Post::insert(
+        [
+            "id" => 1,
+            "title" => "Foo",
+            "excerpt" => "Foo post.",
+        ]
+    );
+
+    Post::insert($secondPost);
+
+    expect(Post::toPage(2)->paginate(1)->items()[0]->toArray())->toBe($secondPost);
+});
