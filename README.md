@@ -50,7 +50,7 @@ Folded is a constellation of packages to help you setting up a web app easily, u
 In your root directory, run this command:
 
 ```bash
-composer required folded/orm
+composer require folded/orm
 ```
 
 ### 2. Add a database connection
