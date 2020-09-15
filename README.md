@@ -2,7 +2,7 @@
 
 A standalone Eloquent ORM for you web app.
 
-[![Packagist License](https://img.shields.io/packagist/l/folded/orm)](https://github.com/folded-php/orm/blob/master/LICENSE) [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/folded/orm)](https://github.com/folded-php/orm/blob/master/composer.json#L14) [![Packagist Version](https://img.shields.io/packagist/v/folded/orm)](https://packagist.org/packages/folded/orm) [![Build Status](https://travis-ci.com/folded-php/orm.svg?branch=master)](https://travis-ci.com/folded-php/orm) [![Maintainability](https://api.codeclimate.com/v1/badges/9e72165b7dbf2a78b7db/maintainability)](https://codeclimate.com/github/folded-php/orm/maintainability)
+[![Packagist License](https://img.shields.io/packagist/l/folded/orm)](https://github.com/folded-php/orm/blob/master/LICENSE) [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/folded/orm)](https://github.com/folded-php/orm/blob/master/composer.json#L14) [![Packagist Version](https://img.shields.io/packagist/v/folded/orm)](https://packagist.org/packages/folded/orm) [![Build Status](https://travis-ci.com/folded-php/orm.svg?branch=master)](https://travis-ci.com/folded-php/orm) [![Maintainability](https://api.codeclimate.com/v1/badges/9e72165b7dbf2a78b7db/maintainability)](https://codeclimate.com/github/folded-php/orm/maintainability) [![TODOs](https://img.shields.io/endpoint?url=https://api.tickgit.com/badge?repo=github.com/folded-php/orm)](https://www.tickgit.com/browse?repo=github.com/folded-php/orm)
 
 ## Summary
 
