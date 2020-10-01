@@ -1,10 +1,9 @@
 ---
 name: Bug report
 about: Create a bug report to help us fix inconsistent behaviors.
-title: ''
+title: ""
 labels: bug
 assignees: khalyomede
-
 ---
 
 ## Description
@@ -25,4 +24,4 @@ _Mention every existing workaround you know that will solve the issue._
 
 ## Notes
 
-_Add everything that relates the proposal, like related issues, ...
+_Add everything that relates the proposal, like related issues, ..._
