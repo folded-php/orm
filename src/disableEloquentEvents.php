@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Folded;
 
-if (!function_exists("disableEloquentEvents")) {
+if (!function_exists("Folded\disableEloquentEvents")) {
     /**
      * Disables the Eloquent event system for all the models.
      *

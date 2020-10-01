@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Folded;
 
-if (!function_exists("addDatabaseConnection")) {
+if (!function_exists("Folded\addDatabaseConnection")) {
     /**
      * Add a new database connection.
      *
