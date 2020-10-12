@@ -41,6 +41,8 @@ final class DatabaseConnections
     /**
      * Stores the database connections.
      *
+     * @var array<array<mixed>>
+     *
      * @since 0.1.0
      */
     private static array $connections = [];
@@ -48,12 +50,16 @@ final class DatabaseConnections
     /**
      * Stores the current connection being checked and added to the list of connections.
      *
+     * @var array<mixed>
+     *
      * @since 0.1.0
      */
     private static array $currentConnection = [];
 
     /**
      * Add a new database connection.
+     *
+     * @param array<mixed> $connection The connection parameters.
      *
      * @since 0.1.0
      *
@@ -91,6 +97,8 @@ final class DatabaseConnections
 
     /**
      * Get all the database connections.
+     *
+     * @return array<array<mixed>>
      *
      * @since 0.1.0
      *

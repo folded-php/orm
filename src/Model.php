@@ -5,12 +5,12 @@ declare(strict_types = 1);
 namespace Folded;
 
 use OutOfRangeException;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Pagination\AbstractPaginator;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Pagination\AbstractPaginator;
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 
 /**
  * Represents a class that reflects a table in the database.
@@ -37,7 +37,7 @@ class Model extends EloquentModel
     /**
      * Constructor.
      *
-     * @param array $attributes Fields and values to start with.
+     * @param array<string, mixed> $attributes Fields and values to start with.
      *
      * @since 0.1.0
      *
