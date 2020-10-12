@@ -11,7 +11,7 @@ use InvalidArgumentException;
  *
  * @since 0.1.0
  */
-class DatabaseConnections
+final class DatabaseConnections
 {
     /**
      * @since 0.1.0
@@ -67,7 +67,7 @@ class DatabaseConnections
      */
     public static function add(array $connection): void
     {
-        static::$currentConnection = $connection;
+        self::$currentConnection = $connection;
 
         self::checkCurrentConnection();
 
